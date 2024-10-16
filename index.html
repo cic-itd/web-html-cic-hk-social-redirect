@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Facebook</title>
+    <title>Redirecting...</title>
     <script>
         function openFacebook() {
             // Attempt to open the Facebook app
-            const appUrl = 'fb://page/276282025800732';
+            const appUrl = 'fb://profile/100069068415412';
             const webUrl = 'https://www.facebook.com/CICHK';
             
             // Create a hidden iframe to try opening the app
@@ -20,11 +20,11 @@
             setTimeout(() => {
                 window.location.href = webUrl;
                 document.body.removeChild(iframe);
-            }, 1500);
+            }, 1000);
         }
     </script>
 </head>
 <body onload="openFacebook()">
-    <h1>Redirecting to Facebook...</h1>
+    <p>If you are not redirected, <a href="fb://profile/100069068415412">click here</a>.</p>
 </body>
 </html>
