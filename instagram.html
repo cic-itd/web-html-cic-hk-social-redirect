@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CIC Instagram Page...</title>
+        <script>
+
+            let is_window_active = true;
+
+            // window on focus set active flag
+            window.addEventListener('focus', function () {
+                    is_window_active = true;
+                }
+            );
+
+            // window on blur unset active flag
+            window.addEventListener('blur', function () {
+                    is_window_active = false;
+                }
+            );
+
+            // visit URL if window is active
+            function visit_url_if_window_active(p_url) {
+                if (is_window_active == true) {
+                    window.location.href = p_url;
+                }
+            }
+
+            // determine if browser is Safari
+            function is_safari() {
+                return (/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
+            }
+
+            function open_facebook() {
+                window.location.href = 'instagram://user?username=cic_hk';
+
+                if (is_safari == false) {
+                    setTimeout(() => visit_url_if_window_active('googlechrome://www.instagram.com/cic_hk/'), 400);
+                    setTimeout(() => visit_url_if_window_active('https://www.instagram.com/cic_hk/'), 800);
+                }
+                else {
+                    setTimeout(() => { window.location.href = 'https://www.instagram.com/cic_hk/'; }, 400);
+                }
+            }
+
+        </script>
+    </head>
+    <body onload="open_facebook()">
+        <p>Redirecting to <a href="https://www.instagram.com/cic_hk/">CIC Instagram Page</a>.</p>
+    </body>
+</html>
