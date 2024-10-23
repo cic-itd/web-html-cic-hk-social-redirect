@@ -32,7 +32,8 @@
                 return (/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
             }
 
-            function open_facebook() {
+            // window on load execution
+            window.onload = function () {
                 window.location.href = 'linkedin://company/construction-industry-council/';
 
                 if (is_safari == false) {
@@ -42,11 +43,11 @@
                 else {
                     setTimeout(() => { window.location.href = 'https://www.linkedin.com/company/construction-industry-council/'; }, 400);
                 }
-            }
+            };
 
         </script>
     </head>
-    <body onload="open_facebook()">
+    <body>
         <p>Redirecting to <a href="https://www.linkedin.com/company/construction-industry-council/">CIC LinkedIn Page</a>.</p>
     </body>
 </html>

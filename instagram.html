@@ -32,7 +32,7 @@
                 return (/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
             }
 
-            function open_facebook() {
+            window.onload = function () {
                 window.location.href = 'instagram://user?username=cic_hk';
 
                 if (is_safari == false) {
@@ -42,11 +42,11 @@
                 else {
                     setTimeout(() => { window.location.href = 'https://www.instagram.com/cic_hk/'; }, 400);
                 }
-            }
+            };
 
         </script>
     </head>
-    <body onload="open_facebook()">
+    <body>
         <p>Redirecting to <a href="https://www.instagram.com/cic_hk/">CIC Instagram Page</a>.</p>
     </body>
 </html>
